@@ -1,109 +1,109 @@
-Rank,School
-1,Yale University
-2,Stanford University
-3,University of Chicago
-4,Columbia University
-4,Harvard University
-6,University of Pennsylvania
-7,New York University
-8,University of Virginia
-9,University of California—Berkeley
-10,University of Michigan
-11,Duke University
-12,Cornell University
-13,Northwestern University
-14,Georgetown University
-15,University of California—Los Angeles
-16,Washington University in St. Louis
-17,Boston University
-17,University of Texas at Austin
-17,Vanderbilt University
-20,University of Southern California
-21,University of Florida (Levin)
-21,University of Minnesota
-23,Brigham Young University
-23,University of North Carolina
-25,George Washington University
-25,University of Alabama
-25,University of Notre Dame
-28,University of Iowa
-29,University of Georgia
-30,Arizona State University
-30,Emory University
-30,George Mason University
-30,Ohio State University
-30,William & Mary Law School
-35,University of Illinois—Urbana Champaign
-35,Washington and Lee University
-37,Boston College
-37,Fordham University
-37,University of California—Davis
-37,University of California—Irvine
-37,University of Utah
-37,Wake Forest University
-43,Indiana University - Bloomington
-43,University of Wisconsin
-45,University of Arizona
-46,Texas A&M University
-47,Florida State University
-47,University of Maryland
-49,University of Colorado—Boulder
-49,University of Washington
-51,University of California (Hastings)
-52,Pepperdine University
-52,University of Richmond
-52,Yeshiva University (Cardozo)
-55,Tulane University
-56,University of Tennessee
-56,Villanova University
-58,Baylor University
-58,Pennsylvania State - Dickinson Law
-58,Southern Methodist University
-58,University of Houston
-58,Wayne State University
-63,Temple University
-64,Pennsylvania State - Penn State Law
-64,University of Connecticut
-64,University of San Diego
-67,Loyola Marymount University—Los Angeles
-67,University of Kansas
-67,University of Kentucky
-67,University of Missouri
-67,University of Nevada—Las Vegas
-67,University of Oregon
-73,American University
-73,Loyola University—Chicago
-73,Northeastern University
-73,Seton Hall University
-73,University of Miami
-78,Case Western Reserve University
-78,Drexel University
-78,Georgia State University
-78,University of Denver
-78,University of Nebraska
-78,University of Pittsburgh
-84,St. John's University
-84,University of South Carolina
-86,Rutgers University
-86,"University of Arkansas, Fayetteville"
-88,Lewis And Clark College
-88,University of Cincinnati
-88,University of Oklahoma
-91,Michigan State University
-91,University of Hawaii
-91,University of New Mexico
-94,Catholic University Of America
-94,Illinois Institute of Technology (Kent)
-94,University of Buffalo—SUNY
-94,University of Louisville
-98,Brooklyn Law School
-98,Florida International University
-98,Howard University
-98,Indiana University - Indianapolis
-98,Saint Louis University
-103,Syracuse University
-103,University of Montana
-105,DePaul University
-105,Louisiana State University
-105,Marquette University
-105,Texas Tech University
+Rank,School,Domain
+1,Yale University,yale.edu
+2,Stanford University,stanford.edu
+3,University of Chicago,uchicago.edu
+4,Columbia University,columbia.edu
+4,Harvard University,harvard.edu
+6,University of Pennsylvania,upenn.edu
+7,New York University,nyu.edu
+8,University of Virginia,virginia.edu
+9,University of California—Berkeley,berkeley.edu
+10,University of Michigan,umich.edu
+11,Duke University,duke.edu
+12,Cornell University,cornell.edu
+13,Northwestern University,northwestern.edu
+14,Georgetown University,georgetown.edu
+15,University of California—Los Angeles,ucla.edu
+16,Washington University in St. Louis,wustl.edu
+17,Boston University,bu.edu
+17,University of Texas at Austin,utexas.edu
+17,Vanderbilt University,vanderbilt.edu
+20,University of Southern California,usc.edu
+21,University of Florida (Levin),ufl.edu
+21,University of Minnesota,umn.edu
+23,Brigham Young University,byu.edu
+23,University of North Carolina,unc.edu
+25,George Washington University,gwu.edu
+25,University of Alabama,ua.edu
+25,University of Notre Dame,nd.edu
+28,University of Iowa,uiowa.edu
+29,University of Georgia,uga.edu
+30,Arizona State University,asu.edu
+30,Emory University,emory.edu
+30,George Mason University,gmu.edu
+30,Ohio State University,osu.edu
+30,William & Mary Law School,wm.edu
+35,University of Illinois—Urbana Champaign,illinois.edu
+35,Washington and Lee University,wlu.edu
+37,Boston College,bc.edu
+37,Fordham University,fordham.edu
+37,University of California—Davis,ucdavis.edu
+37,University of California—Irvine,uci.edu
+37,University of Utah,utah.edu
+37,Wake Forest University,wfu.edu
+43,Indiana University - Bloomington,iu.edu
+43,University of Wisconsin,wisc.edu
+45,University of Arizona,arizona.edu
+46,Texas A&M University,tamu.edu
+47,Florida State University,fsu.edu
+47,University of Maryland,umd.edu
+49,University of Colorado—Boulder,colorado.edu
+49,University of Washington,washington.edu
+51,University of California (Hastings),uclawsf.edu
+52,Pepperdine University,pepperdine.edu
+52,University of Richmond,richmond.edu
+52,Yeshiva University (Cardozo),yu.edu
+55,Tulane University,tulane.edu
+56,University of Tennessee,utk.edu
+56,Villanova University,villanova.edu
+58,Baylor University,baylor.edu
+58,Pennsylvania State - Dickinson Law,psu.edu
+58,Southern Methodist University,smu.edu
+58,University of Houston,uh.edu
+58,Wayne State University,wayne.edu
+63,Temple University,temple.edu
+64,Pennsylvania State - Penn State Law,psu.edu
+64,University of Connecticut,uconn.edu
+64,University of San Diego,sandiego.edu
+67,Loyola Marymount University—Los Angeles,lmu.edu
+67,University of Kansas,ku.edu
+67,University of Kentucky,uky.edu
+67,University of Missouri,missouri.edu
+67,University of Nevada—Las Vegas,unlv.edu
+67,University of Oregon,uoregon.edu
+73,American University,american.edu
+73,Loyola University—Chicago,luc.edu
+73,Northeastern University,northeastern.edu
+73,Seton Hall University,shu.edu
+73,University of Miami,miami.edu
+78,Case Western Reserve University,case.edu
+78,Drexel University,drexel.edu
+78,Georgia State University,gsu.edu
+78,University of Denver,du.edu
+78,University of Nebraska,unl.edu
+78,University of Pittsburgh,pitt.edu
+84,St. John's University,stjohns.edu
+84,University of South Carolina,sc.edu
+86,Rutgers University,rutgers.edu
+86,"University of Arkansas, Fayetteville",uark.edu
+88,Lewis And Clark College,lclark.edu
+88,University of Cincinnati,uc.edu
+88,University of Oklahoma,ou.edu
+91,Michigan State University,msu.edu
+91,University of Hawaii,hawaii.edu
+91,University of New Mexico,unm.edu
+94,Catholic University Of America,catholic.edu
+94,Illinois Institute of Technology (Kent),iit.edu
+94,University of Buffalo—SUNY,buffalo.edu
+94,University of Louisville,louisville.edu
+98,Brooklyn Law School,brooklaw.edu
+98,Florida International University,fiu.edu
+98,Howard University,howard.edu
+98,Indiana University - Indianapolis,iupui.edu
+98,Saint Louis University,slu.edu
+103,Syracuse University,syracuse.edu
+103,University of Montana,umt.edu
+105,DePaul University,depaul.edu
+105,Louisiana State University,lsu.edu
+105,Marquette University,marquette.edu
+105,Texas Tech University,ttu.edu

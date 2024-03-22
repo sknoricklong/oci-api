@@ -23,3 +23,5 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 # To create the table (if it doesn't exist)
 Base.metadata.create_all(engine)
+
+

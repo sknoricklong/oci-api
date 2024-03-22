@@ -31,8 +31,8 @@ async def update_current_user_profile(profile_data: schemas.ProfileUpdate, db: S
         profile.school = profile_data.school
     if profile_data.rank is not None:
         profile.rank = profile_data.rank
-    if profile_data.affinities is not None:
-        profile.affinities = profile_data.affinities
+    if profile_data.circumstances is not None:
+        profile.circumstances = profile_data.circumstances
 
     profile.last_updated = datetime.utcnow()  # Manually update the last_updated field
     db.commit()

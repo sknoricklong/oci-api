@@ -1,13 +1,13 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from starlette.middleware.sessions import SessionMiddleware
 
-from . import models
-from .config import settings
-from .database import engine
+from .database import  engine
+from . import frontend, models
 from .routers import user, auth, profile, application
 
 
-# models.Base.metadata.create_all(bind=engine)
+models.Base.metadata.create_all(bind=engine)
 
 # Set up CORS middleware options
 origins = [
@@ -30,7 +30,7 @@ app.include_router(auth.router)
 app.include_router(profile.router)
 app.include_router(application.router)
 
+frontend.init(app)
 
-@app.get("/")
-async def root():
-    return {"message": "Hello world"}
+if __name__ == '__main__':
+    print('Please start the app with the "uvicorn" command as shown in the start.sh script')

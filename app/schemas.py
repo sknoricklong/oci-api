@@ -1,16 +1,17 @@
 from datetime import date, datetime
-from pydantic import BaseModel, validator, EmailStr
-from typing import List, Optional, Union
+from pydantic import BaseModel, validator, EmailStr, Field
+from sqlalchemy import func
+from typing import List, Optional, Dict
 import uuid
 
 from .loader import load_law_schools, load_cities
 
-law_schools = load_law_schools()
+law_schools = load_law_schools()['School'].tolist()
 cities = load_cities()
 
 class UserBase(BaseModel):
     email: EmailStr
-    password: str
+    password: Optional[str] = None
 
 class UserCreate(UserBase):
     pass
@@ -18,6 +19,7 @@ class UserCreate(UserBase):
 class UserUpdate(BaseModel):
     email: Optional[EmailStr] = None
     password: Optional[str] = None
+    is_active: Optional[bool] = False
 
 class User(UserBase):
     user_id: str = None
@@ -32,6 +34,7 @@ class UserResponse(BaseModel):
     email: EmailStr
     user_id: uuid.UUID
     created_at: datetime
+    is_active: Optional[bool] = False
 
 class MessageResponse(BaseModel):
     message: str
@@ -46,7 +49,7 @@ class TokenData(BaseModel):
 class ProfileBase(BaseModel):
     school: Optional[str] = None
     rank: Optional[int] = None
-    affinities: Optional[List[str]] = None
+    circumstances: Optional[List[str]] = None
     last_updated: Optional[datetime] = None
 
     @validator('school', pre=True, allow_reuse=True)
@@ -62,7 +65,7 @@ class ProfileCreate(ProfileBase):
     pass
 
 class ProfileUpdate(ProfileBase):
-    affinities: Optional[List[str]] = None
+    circumstances: Optional[List[str]] = None
 
 class ProfileResponse(ProfileBase):
     user: UserResponse
@@ -71,7 +74,7 @@ class ProfileResponse(ProfileBase):
 class ApplicationBase(BaseModel):
     firm: Optional[str] = None
     city: Optional[str] = None
-    networked: Optional[str] = None
+    networked: Optional[List[str]] = None
     applied_date: Optional[date] = None
     applied_response_date: Optional[date] = None
     applied_to_response: Optional[int] = None
@@ -81,7 +84,7 @@ class ApplicationBase(BaseModel):
     callback_date: Optional[date] = None
     callback_response_date: Optional[date] = None
     callback_to_response: Optional[int] = None
-    outcome: Optional[Union[bool, str]] = None
+    stage: Optional[str] = "Not Submitted"
     last_updated: Optional[datetime] = None
 
     @validator('applied_date', 'applied_response_date', 'screener_date', 'screener_response_date', 'callback_date',
@@ -107,15 +110,7 @@ class ApplicationBase(BaseModel):
             raise ValueError(f'City "{value}" is not in the list of valid cities')
         return value
 
-    @validator('outcome', pre=True, allow_reuse=True)
-    def validate_outcome(cls, value):
-        if value == "" or value is None:
-            return None
-        if isinstance(value, bool):
-            return value
-        raise ValueError('Outcome must be a boolean, empty string, or null')
-
-    def update_last_updated(self):
+def update_last_updated(self):
         self.last_updated = datetime.now()
 
 class ApplicationCreate(ApplicationBase):
@@ -129,9 +124,35 @@ class ApplicationResponse(ApplicationBase):
     user_id: uuid.UUID
     last_updated: Optional[datetime] = None
 
+class MedianResponse(BaseModel):
+    success: Optional[float] = Field(None, description="Median days for successful response")
+    not_success: Optional[float] = Field(None, description="Median days for unsuccessful response")
+
+class GranularRate(BaseModel):
+    rate: float
+    numerator: int
+    denominator: int
+
+class SuccessRateGranular(BaseModel):
+    application_to_screener_rate: GranularRate
+    screener_to_callback_rate: GranularRate
+    callback_to_offer_rate: GranularRate
+
+class StartDates(BaseModel):
+    screener_start: Optional[date] = None
+    callback_start: Optional[date] = None
+    offer_start: Optional[date] = None
+
 class SummaryStats(BaseModel):
     total_users_for_firm: int
+    total_applications: int
+    successful_applications: int
     success_rate: float
+    recent_responses_at_current_stage: int
+    median_responses: Dict[str, MedianResponse]
+    current_stage: str
+    success_rate_granular: SuccessRateGranular
+    start_dates: StartDates
 
 class ApplicationResponseWithStats(BaseModel):
     application: ApplicationResponse
